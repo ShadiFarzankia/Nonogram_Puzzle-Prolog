@@ -9,11 +9,12 @@ Nonograms are picture logic puzzles in which cells in a grid must be colored or 
 
 ![Alt text](eagle-sample.png)
 ## How to Run the Code
-To run the code, we can use SWI-Prolog which is one of the most widely used implementations of Prolog. It's free, open-source, and comes with a comprehensive development environment.
-You can execute the example below and check out the output pictures.
+To run the code, we can use SWI-Prolog which is one of the most widely used implementations of Prolog. It's free, open-source, and comes with a comprehensive development environment. To do so, enter the 'execute' command in the query section.
+Below is an example of an input sample and the resulted output.
 ### Example 1:
 ```prolog
-Rows = [[2, 1], [1, 3], [1, 2], [3], [4], [1]]
-Cols = [[1], [5], [2], [5], [2, 1], [2]]
+Rows = [[8,7,5,7],[5,4,3,3],[3,3,2,3],[4,3,2,2],[3,3,2,2],[3,4,2,2],[4,5,2],[3,5,1],[4,3,2],[3,4,2],[4,4,2], [3,6,2],[3,2,3,1],[4,3,4,2],[3,2,3,2],[6,5],[4,5],[3,3],[3,3],[1,1]]
+Cols = [[1], [1], [2], [4], [7], [9], [2, 8], [1, 8], [8], [1, 9], [2, 7], [3, 4], [6, 4], [8, 5], [1, 11], [1, 7], [8], [1, 4, 8], [6, 8], [4, 7]
+, [2, 4], [1, 4], [5], [1, 4], [1, 5], [7], [5], [3], [1], [1]]
 ```
 ![Alt text](w-sample.png)
