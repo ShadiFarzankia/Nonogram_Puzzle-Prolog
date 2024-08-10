@@ -5,10 +5,12 @@ calculate_size(Row, Col, Row_num, Col_num) :-
     length(Col, Col_num).
     
 create_matrix(Mtrx, X, Y, Vars) :-
-    length(Mtrx,X),
+    length(Mtrx, X),
     make_rows(Mtrx, Y, Vars).
-    make_rows([], _, []).
-    make_rows([R|Rs], Len, Vars) :-
+
+make_rows([], _, []).
+
+make_rows([R|Rs], Len, Vars) :-
     length(R, Len),
     make_rows(Rs, Len, Vars0),
     append(R, Vars0, Vars).
@@ -23,6 +25,7 @@ rows([], []).
 rows([C|Cs], [R|Rs]) :-
     row(C, R),
     rows(Cs, Rs).
+
 row(Ks, Row) :-
     sum(Ks,  #=, Ones),
     sum(Row, #=, Ones),
@@ -31,6 +34,7 @@ row(Ks, Row) :-
     automaton(RowZ, [source(start), sink(Final)], [arc(start,0,start) | Arcs]).
 
 arcs([], [], Final, Final).
+
 arcs([K|Ks], Arcs, CurState, Final) :-
     gensym(state, NextState),
     (K == 0 ->
@@ -38,10 +42,9 @@ arcs([K|Ks], Arcs, CurState, Final) :-
         arcs(Ks, Rest, NextState, Final)
     ;
         Arcs = [arc(CurState,1,NextState) | Rest],
-        write(K),
-        K1 #= K-1,
+        K1 #= K - 1,
         arcs([K1|Ks], Rest, NextState, Final)
-).
+    ).
 
 print_matrix([]).
 print_matrix([R|Rs]) :-
@@ -51,16 +54,13 @@ print_matrix([R|Rs]) :-
 print_row([]) :- nl.
 
 print_row([X|R]) :-
-    (X == 0 ->
-        write(’ ’)
-;
-write(’X’)
-    ),
+    (X == 0 -> write('⬜') ; write('⬛')),
     print_row(R).
+
 execute :-
-    write(’Enter the Row Elemets:’),
+    write('Enter the Row Elements: '),
     read(Rows),
-    write(’Enter the column Elements:’),
+    write('Enter the Column Elements: '),
     read(Cols),
     calculate_size(Rows, Cols, Row_num, Col_num),
     create_matrix(Mtrx, Row_num, Col_num, Vars),
