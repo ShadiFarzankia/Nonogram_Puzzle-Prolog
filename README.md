@@ -6,4 +6,14 @@ My project contains the implementation of nonogram puzzle which is a NP-complete
 
 ## Nonogram Puzzle
 Nonograms are picture logic puzzles in which cells in a grid must be colored or left blank according to numbers at the side of the grid to reveal a hidden pixel art-like picture. In this puzzle type, the numbers are a form of discrete tomography that measures how many unbroken lines of filled-in squares there are in any given row or column. For example, a clue of ”4 8 3” would mean there are sets of four, eight, and three filled squares, in that order, with at least one blank square between successive sets. One example for nonogram puzzle is shown below:
+
 ![Alt text](eagle-sample.png)
+## How to Run the Code
+To run the code, we can use SWI-Prolog which is one of the most widely used implementations of Prolog. It's free, open-source, and comes with a comprehensive development environment.
+You can execute the example below and check out the output pictures.
+### Example 1:
+```prolog
+Rows = [[2, 1], [1, 3], [1, 2], [3], [4], [1]]
+Cols = [[1], [5], [2], [5], [2, 1], [2]]
+```
+![Alt text](w-sample.png)
